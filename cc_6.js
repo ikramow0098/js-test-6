@@ -47,3 +47,16 @@ function applyBulkDiscount(orders, discountFunction) {
 let orders = [200, 600, 1200, 450, 800];
 console.log(applyBulkDiscount(orders, amount => amount > 500 ? amount * 0.9 : amount));
 // Expected output: [200, 540, 1080, 450, 720]
+
+// Task 7: Business Expense Tracker (Closures)
+function createExpenseTracker() {
+    let total = 0;
+    return function(amount) {
+        total += amount;
+        return `Total Expenses: $${total}`;
+    };
+}
+let tracker = createExpenseTracker();
+console.log(tracker(200)); // "Total Expenses: $200"
+console.log(tracker(150)); // "Total Expenses: $350"
+
